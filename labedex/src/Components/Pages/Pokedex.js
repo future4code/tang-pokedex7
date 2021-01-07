@@ -1,21 +1,23 @@
-export default function Home (){
-    return<div>
-        <nav>
-            <button>Voltar para lista de pokemons</button>
-            <h2>Pokedex</h2>
-        </nav>
+import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/PokedexStyle"
 
-        <main>
-            <article>
-                <div>
+export default function Pokedex (){
+    return <div>
+        <Navigation>
+            <Button>Voltar para lista de pokemons</Button>
+            <Title>Pokedex</Title>
+        </Navigation>
+
+        <Main>
+            <Card>
+                <Container className="pokeCard">
                     Poke Card
-                </div>
+                </Container>
 
-                <div>
-                    <button>remover</button>
-                    <button>Ver detal.</button>
-                </div>
-            </article>
-        </main>
+                <Container>
+                    <ButtonCard>remover</ButtonCard>
+                    <ButtonCard className="buttonCard">Ver detal.</ButtonCard>
+                </Container>
+            </Card>
+        </Main>
     </div>
 }

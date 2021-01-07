@@ -1,4 +1,4 @@
-import {Navigation, Button, Title, Main, Card} from "../../styles/HomeStyle"
+import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/HomeStyle"
 
 export default function Home (){
     return <div>
@@ -9,15 +9,16 @@ export default function Home (){
 
         <Main>
             <Card>
-                <div>
+                <Container className="pokeCard">
                     Poke Card
-                </div>
+                </Container>
 
-                <div>
-                    <button>adicionar</button>
-                    <button>Ver detal.</button>
-                </div>
+                <Container>
+                    <ButtonCard>Adicionar</ButtonCard>
+                    <ButtonCard className="buttonCard">Ver detal.</ButtonCard>
+                </Container>
             </Card>
+            
         </Main>
     </div>
 }

@@ -1,4 +1,4 @@
-export default function Home (){
+export default function Details (){
     return<div>
         <nav>
             <button>Voltar</button>
