@@ -1,14 +1,14 @@
-import {Navegação, Button, Tittle} from "../../styles/HomeStyle"
+import {Navigation, Button, Title, Main, Card} from "../../styles/HomeStyle"
 
 export default function Home (){
     return <div>
-        <Navegação>
+        <Navigation>
             <Button>Ver minha POKEDEX</Button>
-            <Tittle>Lista de Pokemons</Tittle>
-        </Navegação>
+            <Title>Lista de Pokemons</Title>
+        </Navigation>
 
-        <main>
-            <article>
+        <Main>
+            <Card>
                 <div>
                     Poke Card
                 </div>
@@ -17,7 +17,7 @@ export default function Home (){
                     <button>adicionar</button>
                     <button>Ver detal.</button>
                 </div>
-            </article>
-        </main>
+            </Card>
+        </Main>
     </div>
 }
