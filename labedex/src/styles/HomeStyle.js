@@ -3,7 +3,7 @@ import styled from "styled-components"
 //Navigation bar starts
 export const Navigation = styled.nav`
     display: grid;
-    grid-template: 1fr / 15% 75%;
+    grid-template: 1fr / 15% 60%;
     align-items: center;
     background-color: yellow;
     
