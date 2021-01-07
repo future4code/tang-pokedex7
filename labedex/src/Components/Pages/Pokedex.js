@@ -1,4 +1,4 @@
-export default function Home (){
+export default function Pokedex (){
     return<div>
         <nav>
             <button>Voltar para lista de pokemons</button>

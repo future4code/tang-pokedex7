@@ -1,19 +1,21 @@
-export default function Home (){
+import {Navigation, Main, Title, Button, Container, Image, Status, Types} from "../../styles/DetailsStyle"
+
+export default function Details  (){
     return<div>
-        <nav>
-            <button>Voltar</button>
-            <h2>Nome do Pokemon</h2>
-            <button>Adicionar/Remover da Pokedex</button>
-        </nav>
+        <Navigation>
+            <Button>Voltar</Button>
+            <Title>Nome do Pokemon</Title>
+            <Button className="right">Adicionar/Remover da Pokedex</Button>
+        </Navigation>
 
-        <main>
-            <article>
-                <div> Imagem frontal</div>
-                <div> Imagem Posterior</div>
-            </article>
+        <Main>
+            <Container className="images">
+                <Image> Imagem frontal</Image>
+                <Image> Imagem Posterior</Image>
+            </Container>
 
-            <article>
-                <div> 
+            <Container>
+                <Status>
                     <h2>Status</h2>
                     <p>Hp</p>
                     <p>Attack</p>
@@ -21,14 +23,14 @@ export default function Home (){
                     <p>Special-attack</p>
                     <p>Special-defense</p>
                     <p>Speed</p>
-                </div>
-            </article>
+                </Status>
+            </Container>
 
-            <article>
-                <div>
+            <Container className="rightSide">
+                <Types>
                     <p>type1</p>
                     <p>type2</p>
-                </div>
+                </Types>
 
                 <div>
                     <h2>Moves</h2>
@@ -36,7 +38,7 @@ export default function Home (){
                     <p>Move name 2</p>
                     <p>Move name 3</p>
                 </div>
-            </article>
-        </main>
+            </Container>
+        </Main>
     </div>
 }
