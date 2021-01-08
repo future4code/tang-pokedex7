@@ -1,6 +1,9 @@
 import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/HomeStyle"
+import { useEffect } from "react"
+import PokemonRequest from "../../hooks/PokemonRequest"
 
-export default function Home (){
+export default function Home (props){
+
     return <div>
         <Navigation>
             <Button>Ver minha POKEDEX</Button>
@@ -8,9 +11,10 @@ export default function Home (){
         </Navigation>
 
         <Main>
-            <Card>
+            {props.pokemons.map(pokemon => {
+                return <Card key={pokemon.url}>
                 <Container className="pokeCard">
-                    Poke Card
+                    {pokemon.name}   
                 </Container>
 
                 <Container>
@@ -18,7 +22,7 @@ export default function Home (){
                     <ButtonCard className="buttonCard">Ver detal.</ButtonCard>
                 </Container>
             </Card>
-            
+            })}
         </Main>
     </div>
 }
