@@ -1,8 +1,17 @@
 import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/HomeStyle"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import PokemonRequest from "../../hooks/PokemonRequest"
+import axios from "axios"
 
 export default function Home (props){
+    const [pokemons, setPokemons] = useState([])
+
+    const catchPokemon = (url) => {
+        axios
+        .get(url)
+        .then(Response => (console.log(Response.data)))
+        .catch(erro => (console.log(erro)))
+    }
 
     return <div>
         <Navigation>
@@ -12,6 +21,8 @@ export default function Home (props){
 
         <Main>
             {props.pokemons.map(pokemon => {
+
+                catchPokemon(pokemon.url)
                 return <Card key={pokemon.url}>
                 <Container className="pokeCard">
                     {pokemon.name}   
