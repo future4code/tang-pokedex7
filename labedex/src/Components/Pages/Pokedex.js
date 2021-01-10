@@ -1,9 +1,16 @@
 import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/PokedexStyle"
+import { useHistory } from "react-router-dom"
 
 export default function Pokedex (){
+    const history = useHistory()
+
+    const goBackToPage = () => {
+        history.goBack()
+    }
+
     return <div>
         <Navigation>
-            <Button>Voltar para lista de pokemons</Button>
+            <Button onClick={goBackToPage}>Voltar para lista de pokemons</Button>
             <Title>Pokedex</Title>
         </Navigation>
 

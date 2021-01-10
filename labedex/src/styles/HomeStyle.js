@@ -46,11 +46,13 @@ export const Container = styled.div`
     grid-template: 1fr / 1fr 1fr;
     &.pokeCard {
         display: grid;
-        grid-template: 1fr / 1fr;
+        grid-template: 1fr 1fr/ 1fr;
         background-color: red;
-        height: 100px;
+        height: 150px;
+        justify-content: center;
     }
 `
+
 export const ButtonCard = styled.button`
     background-color: yellow;
     font-family: Tahoma;
