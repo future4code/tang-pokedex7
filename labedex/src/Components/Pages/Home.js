@@ -1,36 +1,44 @@
 import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/HomeStyle"
-import { useEffect, useState } from "react"
-import PokemonRequest from "../../hooks/PokemonRequest"
-import axios from "axios"
+import CatchPokemonSprites from "../../hooks/CatchPokemonSprites"
+import CatchPokemonData from "../../hooks/CatchPokemonData"
+import { useHistory } from "react-router-dom"
 
 export default function Home (props){
-    const [pokemons, setPokemons] = useState([])
+    const history = useHistory()
 
-    const catchPokemon = (url) => {
-        axios
-        .get(url)
-        .then(Response => (console.log(Response.data)))
-        .catch(erro => (console.log(erro)))
+    const goToPokedex = () => {
+        history.push("/Pokedex")
+    }
+
+    const goToDetails = () => {
+        
+        history.push("/Details")
+    }
+
+    const addToPokedex = (url) => {
+        const pokedex = url
+        const newPokedex = [...props.pokedex, pokedex]
+        props.setPokedex(newPokedex)
     }
 
     return <div>
         <Navigation>
-            <Button>Ver minha POKEDEX</Button>
+            <Button onClick={goToPokedex}>Ver minha POKEDEX</Button>
             <Title>Lista de Pokemons</Title>
         </Navigation>
 
         <Main>
             {props.pokemons.map(pokemon => {
-
-                catchPokemon(pokemon.url)
+                const newPokemon = CatchPokemonSprites(pokemon.url)
                 return <Card key={pokemon.url}>
                 <Container className="pokeCard">
-                    {pokemon.name}   
+                    <p>{pokemon.name} </p>
+                    <span><img alt={pokemon.name} src={newPokemon}/></span>  
                 </Container>
 
                 <Container>
-                    <ButtonCard>Adicionar</ButtonCard>
-                    <ButtonCard className="buttonCard">Ver detal.</ButtonCard>
+                    <ButtonCard onClick={() => {addToPokedex(pokemon.url)}}>Adicionar</ButtonCard>
+                    <ButtonCard className="buttonCard" onClick={goToDetails}>Ver detal.</ButtonCard>
                 </Container>
             </Card>
             })}

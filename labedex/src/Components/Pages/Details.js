@@ -1,9 +1,16 @@
 import {Navigation, Main, Title, Button, Container, Image, Status, Types} from "../../styles/DetailsStyle"
+import { useHistory } from "react-router-dom"
 
 export default function Details  (){
+    const history = useHistory()
+
+    const goBackToPage = () => {
+        history.goBack()
+    }
+
     return<div>
         <Navigation>
-            <Button>Voltar</Button>
+            <Button onClick={goBackToPage}>Voltar</Button>
             <Title>Nome do Pokemon</Title>
             <Button className="right">Adicionar/Remover da Pokedex</Button>
         </Navigation>

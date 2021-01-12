@@ -1,17 +1,22 @@
 import './App.css';
-import {useState} from "react"
-import Home from "./Components/Pages/Home"
-import Pokedex from "./Components/Pages/Pokedex"
-import Details from "./Components/Pages/Details"
+import Router from "./Routes/Router"
 import PokemonRequest from "./hooks/PokemonRequest"
+import { useEffect, useState } from 'react';
 
 function App() {
-  const pokemons = PokemonRequest("https://pokeapi.co/api/v2/pokemon/?results=20")
-
-
+  let pokemonsApi = PokemonRequest("https://pokeapi.co/api/v2/pokemon/?results=20")
+  const [pokedex, setPokedex] = useState([])
+  
+  useEffect(() =>{
+    console.log(pokedex)
+  }, [pokedex])
   return (
     <div className="App">
-      <Home pokemons={pokemons}/>
+      <Router 
+        pokemons={pokemonsApi}
+        pokedex={pokedex}
+        setPokedex={setPokedex}
+      />
     </div>
   );
 }
