@@ -1,6 +1,5 @@
 import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/HomeStyle"
 import CatchPokemonSprites from "../../hooks/CatchPokemonSprites"
-import CatchPokemonData from "../../hooks/CatchPokemonData"
 import { useHistory } from "react-router-dom"
 
 export default function Home (props){

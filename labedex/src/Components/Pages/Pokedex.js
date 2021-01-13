@@ -15,6 +15,8 @@ export default function Pokedex (props){
         history.push("/Details")
     }
 
+    var poke = props.pokedex.filter((url, index) => props.pokedex.indexOf(url) === index)
+    
     return <div>
         <Navigation>
             <Button onClick={goBackToPage}>Voltar para lista de pokemons</Button>
@@ -22,7 +24,7 @@ export default function Pokedex (props){
         </Navigation>
 
         <Main>
-            {props.pokedex.map((url, index)=>{
+            {poke.map(function(url, index){
                 const newPokemon = CatchPokemonData(url)
                 return <PokeCard key={index}
                     pokemon={newPokemon}

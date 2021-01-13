@@ -11,7 +11,7 @@ export default function PokeCard (props) {
 
         <Container>
             <ButtonCard>remover</ButtonCard>
-            <ButtonCard className="buttonCard">Ver detal.</ButtonCard>
+            <ButtonCard className="buttonCard" >Ver detal.</ButtonCard>
         </Container>
     </Card>
 }
