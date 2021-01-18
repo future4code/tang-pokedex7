@@ -1,9 +1,8 @@
 # POKEDEX
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+Integrantes: 
+- Felipe Pimentel de Cerqueira
+- Lincoln Pinto Duarte
 
 Link do Surge: www.link.com.br
 
