@@ -1,45 +1,41 @@
-import {Navigation, Button, Title, Main, Card, Container, ButtonCard} from "../../styles/HomeStyle"
-import CatchPokemonSprites from "../../hooks/CatchPokemonSprites"
+import {Navigation, Button, Title, Main} from "../../styles/HomeStyle"
 import { useHistory } from "react-router-dom"
+import PokeCard from "../../hooks/PokeCardHome"
+import PokemonRequest from "../../hooks/PokemonRequest"
+import { useContext, useEffect } from "react"
+import GlobalContext from "../../Global/GlobalContext"
 
-export default function Home (props){
+export default function Home (){
     const history = useHistory()
+    const data = useContext(GlobalContext);
+    const pokemon = data.states.pokemons
 
     const goToPokedex = () => {
         history.push("/Pokedex")
     }
 
-    const goToDetails = () => {
-        
-        history.push("/Details")
-    }
-
-    const addToPokedex = (url) => {
-        const pokedex = url
-        const newPokedex = [...props.pokedex, pokedex]
-        props.setPokedex(newPokedex)
-    }
+    const addPokedex = (newPokemon) => {
+        let newPokedex = [...data.states.pokedex, newPokemon];
+        data.setters.setPokedex(newPokedex)
+        alert(`${newPokemon.name} agora está na sua pokedex!`);
+    };
 
     return <div>
+        
         <Navigation>
-            <Button onClick={goToPokedex}>Ver minha POKEDEX</Button>
+            <Button onClick={() => {goToPokedex()}}>Ver minha POKEDEX</Button>
             <Title>Lista de Pokemons</Title>
         </Navigation>
 
         <Main>
-            {props.pokemons.map(pokemon => {
-                const newPokemon = CatchPokemonSprites(pokemon.url)
-                return <Card key={pokemon.url}>
-                <Container className="pokeCard">
-                    <p>{pokemon.name} </p>
-                    <span><img alt={pokemon.name} src={newPokemon}/></span>  
-                </Container>
+            { pokemon.map(pokemonData => {
+                const pokemon = PokemonRequest(pokemonData.url)
 
-                <Container>
-                    <ButtonCard onClick={() => {addToPokedex(pokemon.url)}}>Adicionar</ButtonCard>
-                    <ButtonCard className="buttonCard" onClick={goToDetails}>Ver detal.</ButtonCard>
-                </Container>
-            </Card>
+                return <PokeCard key={pokemonData.url}
+                    pokemon={pokemon}
+                    url={pokemonData.url}
+                    addPokedex={addPokedex}
+                />
             })}
         </Main>
     </div>

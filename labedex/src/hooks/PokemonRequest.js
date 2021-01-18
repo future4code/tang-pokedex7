@@ -7,7 +7,7 @@ export default function PokemonRequest (url) {
     useEffect(() => {
         axios
         .get(url)
-        .then(Response => (setPokemons(Response.data.results)))
+        .then(Response => (setPokemons(Response.data)))
         .catch(erro => (console.log(erro)))
     },[url])
 
