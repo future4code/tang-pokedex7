@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GlobalStateContext from "./GlobalStateContext"
 import axios from "axios";
+import {useHistory} from 'react-router-dom'
 
 const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
@@ -8,6 +9,7 @@ const GlobalState = (props) => {
     const [details, setDetails] = useState({})
     const [morePokemons, setMorePokemons] = useState("20")
     
+
     useEffect(() => {
         getPokemons()
     }, [morePokemons])

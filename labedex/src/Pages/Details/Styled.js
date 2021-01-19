@@ -8,7 +8,8 @@ export const MainDiv = styled.div`
     background-color: ${Colors.blue.dark};
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    grid-gap: 50px;
 `
 export const Div = styled.div`
     display: flex;
@@ -25,16 +26,17 @@ export const ImageContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: 350px;
+    height: 500px;
     background-color: ${Colors.red.primary};
     border: 5px solid ${Colors.red.dark};
-    margin: 30px 0;
+    margin: 25px 0;
     border-radius: 10px;
 `   
 
 export const Image = styled.img`
-    width: 70%;
-    height: 210px;
+    width: auto;
+    height: 40%;
     background-color: #708090;
     border: 4px solid ${Colors.black.primary};
     border-radius: 25px;
@@ -48,13 +50,19 @@ export const Image = styled.img`
 
 export const StatusContainer = styled(ImageContainer)`
     align-items: flex-start;
+    align-items: center;
 `
 export const TypeContainer = styled.div`
     width: 100%;
-    height: 60px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 5px;
     box-shadow: 0px 8px 10px rgba(0,0,0,0.2);
+`
+
+export const AbilityText = styled.div`
+    padding: 20px;
+
 `

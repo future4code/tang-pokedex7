@@ -1,13 +1,26 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import Header from '../../Components/Header/Header'
-import { MainDiv, Div, ImageContainer, Image, StatusContainer, TypeContainer } from './Styled'
+import { MainDiv, Div, ImageContainer, Image, StatusContainer, TypeContainer, AbilityText } from './Styled'
+import axios from "axios";
 export default function Details() {
-    
     const data = useContext(GlobalStateContext);
     const details = data.states.details
-    console.log(details)
+    const [abilities, setAbilities] = useState([])
+    console.log(abilities)
     
+    const getAbilities = (url) => {
+        axios
+        .get(url)
+        .then(response =>setAbilities([...abilities, response.data]))
+        .catch(erro => erro)
+    }
+
+    useEffect(() => {
+        getAbilities(details.abilities[0].ability.url)
+        getAbilities(details.abilities[1].ability.url)
+    }, [])
+
     return <div>
         <Header pokelist={true} />
         <MainDiv>
@@ -15,8 +28,11 @@ export default function Details() {
                 <h1>{details.name}</h1>
                 <Image src={details.sprites.other.['official-artwork'].front_default}/>
                 <TypeContainer>
-                    <h2>{details.types[0].type.name}</h2> 
-                    <h2>{details.types[1].type.name}</h2>
+                    {details.types.map(array => {
+                        return <h2>
+                            {array.type.name}
+                        </h2>
+                    })}
                 </TypeContainer>   
                 <div>
                     {details.stats.map(status => {
@@ -30,18 +46,12 @@ export default function Details() {
 
             <StatusContainer>
                <h1> Habilidades </h1>
-               <p> {details.abilities[0].ability.name} </p>
-               <p> {details.abilities[1].ability.name} </p>
-            </StatusContainer>
-
-            <StatusContainer>
-                <Div>
-                   1
-                </Div>
-
-                <Div>
-                    2
-                </Div>
+               {abilities && abilities.map(array => {
+                   return <AbilityText>
+                       <p>{array.name}</p>
+                       <p>{array.effect_entries[1].effect}</p>
+                   </AbilityText>
+               })}
             </StatusContainer>
         </MainDiv>
     </div>

@@ -15,7 +15,6 @@ export const Div = styled.div`
 export const MainDiv = styled.div`
     width: 100%;
     min-height: 90vh;
-    position: fixed;
     max-height: max-content;
     background-color: ${Colors.blue.dark};
     display: flex;
