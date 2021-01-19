@@ -34,7 +34,7 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img`
     width: 70%;
-    height: 215px;
+    height: 210px;
     background-color: #708090;
     border: 4px solid ${Colors.black.primary};
     border-radius: 25px;
@@ -49,4 +49,12 @@ export const Image = styled.img`
 export const StatusContainer = styled(ImageContainer)`
     align-items: flex-start;
 `
-
+export const TypeContainer = styled.div`
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.2);
+`
