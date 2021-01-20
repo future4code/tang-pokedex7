@@ -7,9 +7,9 @@ Integrantes:
 Link do Surge: www.link.com.br
 
 O que funciona:
-- Item 1
-- Item 2
+-Adicionar a pokedex
+-Ver detalhes do pokemon
+-Remover da pokedex
 
 O que não funciona: 
-- Item 3
-- Item 4
+-bota os pokemons para lutar
