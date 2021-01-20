@@ -17,3 +17,5 @@ O que funciona:
 O que não funciona: 
 
 -Rinha de pokemons
+
+Telas do Projeto:
