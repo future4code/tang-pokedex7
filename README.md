@@ -19,3 +19,4 @@ O que não funciona:
 -Rinha de pokemons
 
 Telas do Projeto:
+![Pokedex HomePage](https://github.com/future4code/tang-pokedex7/blob/master/Pokedex.png)
