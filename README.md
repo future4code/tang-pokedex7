@@ -1,16 +1,23 @@
 # POKEDEX
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+Integrantes: 
+- Felipe Pimentel de Cerqueira
+- Lincoln Pinto Duarte
 
-Link do Surge: www.link.com.br
+Link do Surge: http://cagey-eyes.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+
+-Adicionar a pokedex
+
+-Ver detalhes do pokemon
+
+-Remover da pokedex
 
 O que não funciona: 
-- Item 3
-- Item 4
+
+-Rinha de pokemons
+
+Telas do Projeto:
+![Pokedex HomePage](https://github.com/future4code/tang-pokedex7/blob/master/Pokedex.png)
+![Pokedex DetailPage](https://github.com/future4code/tang-pokedex7/blob/master/PokeDetails.png)
